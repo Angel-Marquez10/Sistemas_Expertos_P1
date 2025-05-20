@@ -1,0 +1,39 @@
+digraph ClueGameFlow {
+	rankdir=LR size="8,5"
+	Start [label=Inicio]
+	Welcome [label="Pantalla Bienvenida
+(COMENZAR AVENTURA)"]
+	Init [label="Inicializar Juego
+elegir solución"]
+	Chapter [label="Mostrar Capítulos
+y habilitar botones"]
+	Chapter1 [label="Capítulo 1"]
+	Chapter2 [label="Capítulo 2"]
+	Chapter3 [label="Capítulo 3"]
+	Chapter4 [label="Capítulo 4"]
+	Chapter5 [label="Capítulo 5"]
+	Detect [label="Botón Pista
+(<<Mostrar Pista>>)"]
+	Accuse [label="Acusar
+(llenar combos, presionar)"]
+	Result [label="Mostrar Resultado
+(Éxito o Fallo)"]
+	Restart [label="Reiniciar
+(COMENZAR AVENTURA)"]
+	Start -> Welcome
+	Welcome -> Init
+	Init -> Chapter
+	Chapter -> Chapter1
+	Chapter1 -> Detect
+	Detect -> Chapter2
+	Chapter2 -> Detect
+	Detect -> Chapter3
+	Chapter3 -> Detect
+	Detect -> Chapter4
+	Chapter4 -> Detect
+	Detect -> Chapter5
+	Chapter5 -> Accuse
+	Accuse -> Result
+	Result -> Restart
+	Restart -> Init
+}

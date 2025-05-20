@@ -1,0 +1,34 @@
+// Diagrama de Flujo - Clue Interactivo
+digraph {
+	A [label="Inicio
+(App se ejecuta)"]
+	B [label="Mostrar Pantalla
+Bienvenida"]
+	C [label="¿Usuario selecciona
+\"Comenzar Aventura\"?"]
+	D [label="Elegir Solución
+(Personaje, Arma, Lugar)"]
+	E [label="Mostrar Capítulo 1
+(Mostrar narrativa + imagen)"]
+	F [label="Usuario puede:
+ - Cambiar capítulo
+ - Ver pista"]
+	G [label="¿Capítulo 5?"]
+	H [label="Activar opción \"Acusar\""]
+	I [label="Usuario selecciona:
+Personaje, Arma, Lugar"]
+	J [label="Verificar Acusación"]
+	K [label="Mostrar Resultado Final"]
+	A -> B
+	B -> C
+	C -> D [label="Sí"]
+	D -> E
+	E -> F
+	F -> G
+	G -> H [label="Sí"]
+	H -> I
+	I -> J
+	J -> K
+	C -> B [label=No]
+	F -> E [label="Cambiar capítulo"]
+}
